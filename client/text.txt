@@ -1,0 +1,10 @@
+  1.2 Navigacija [0.05]
+    * Sukurti bent 2 pavyzdinius puslapius ir aprašykite jū maršrutus faile __routes.ts__
+    * Sukurti Navbar komponentą
+    * Sukurti NavbarLayout komponentą kuris naudos Navbar ir <Outlet> iš react-router-dom
+    * Apgaubkite savo sukurtus puslapius Layout'u faile __router.tsx__
+    * Sukurkite Navbar Dizainą
+    * Sukurkite Stilizuotą NavbarDesktopLink komponentą
+      * Komponento pagrindas - NavLink iš 'react-router-dom'
+      * Komponento stilizavimas naudojas styled iš '@mui/material'
+    * Išsaugokite nuorodų duomenis atskirame faile
