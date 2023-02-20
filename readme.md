@@ -38,5 +38,5 @@ npm run build
 ```
 
 ## View code
-Open this site and view code [online Github editor]()
+Open site and view code in [online Github editor](https://github.dev/evelinavid/react-crud).
  
