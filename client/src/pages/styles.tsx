@@ -2,6 +2,7 @@
 import { Theme } from '@mui/material';
 
 export const CarsGridStyles = (theme: Theme) => ({
+  boxSizing: 'border-box',
   display: 'grid',
   justifyItems: 'stretch',
   gridTemplateRows: 'auto',
@@ -21,6 +22,7 @@ export const CarsGridStyles = (theme: Theme) => ({
 );
 
 export const CarsCardStyle = (theme: Theme) => ({
+  boxSizing: 'border-box',
   width: 1,
   height: '400px',
   borderRadius: '1rem',
@@ -32,6 +34,7 @@ export const CarsCardStyle = (theme: Theme) => ({
 });
 
 export const H1Style = (theme:Theme) => ({
+  boxSizing: 'border-box',
   fontSize: '25px',
   textAlign: 'center',
   [theme.breakpoints.up('sm')]: {
@@ -40,6 +43,7 @@ export const H1Style = (theme:Theme) => ({
 });
 
 export const H2Style = () => ({
+  boxSizing: 'border-box',
   textAlign: 'end',
   fontWeight: 600,
   paddingRight: '8px',
@@ -47,10 +51,13 @@ export const H2Style = () => ({
 });
 
 export const H3Style = () => ({
+  boxSizing: 'border-box',
+  paddingTop: '8px',
   fontWeight: 400,
 });
 
 export const H4Style = (theme: Theme) => ({
+  boxSizing: 'border-box',
   fontWeight: 300,
   color: theme.palette.common.black,
 });
