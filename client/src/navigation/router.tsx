@@ -1,7 +1,7 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import NavbarLayout from 'components/layouts/navbar-layout';
-import HomePage from '../pages/home-page';
+import HomePage from '../pages/index';
 import routes from './routes';
 
 const router = createBrowserRouter([
@@ -14,7 +14,7 @@ const router = createBrowserRouter([
         element: <HomePage />,
 
       },
-          ],
+    ],
   },
 
 ]);

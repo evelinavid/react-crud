@@ -17,5 +17,7 @@ export const mainLinks: Link[] = [
   
 ];
 
+export const linksGroups: LinksGroup[] = [];
+
 
 export const extendBr: Breakpoint = 'sm';
