@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppBar, Toolbar } from '@mui/material';
+import { AppBar, Toolbar, Container } from '@mui/material';
 import { extendBr } from './links-data';
 import NavbarDesktopMenu from './navbar-desktop-menu/navbar-desktop-menu';
 import NavbarMobileMenu from './navbar-mobile-menu/navbar-mobile-menu';
@@ -11,11 +11,13 @@ const Navbar = () => {
   const togglerDrawer = () => setOpenDrawer(!openDrawer);
   return (
     <AppBar position="sticky" color="secondary">
-      <Toolbar sx={{ justifyContent: { xs: 'flex-end', [extendBr]: 'flex-start' } }}>
-        <NavbarDesktopMenu />
-        <NavbarToggler openDrawer={openDrawer} togglerDrawer={togglerDrawer} />
-        <NavbarMobileMenu openDrawer={openDrawer} closeDrawer={closeDrawer} />
-      </Toolbar>
+      <Container>
+        <Toolbar sx={{ justifyContent: { xs: 'flex-end', [extendBr]: 'flex-start' } }}>
+          <NavbarDesktopMenu />
+          <NavbarToggler openDrawer={openDrawer} togglerDrawer={togglerDrawer} />
+          <NavbarMobileMenu openDrawer={openDrawer} closeDrawer={closeDrawer} />
+        </Toolbar>
+      </Container>
     </AppBar>
   );
 };
