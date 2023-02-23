@@ -24,22 +24,22 @@ export const getCarFormValues = (form:HTMLFormElement | undefined): Omit<CarMode
   if (!isStringArr(images)) throw new Error('All images must be strings');
 
   const SunroofMoonroof = formData.get('backupCamera');
-  if (typeof SunroofMoonroof !== 'string') throw new Error('Missing boolean');
+  // if (typeof SunroofMoonroof !== 'string') throw new Error('Missing boolean');
 
   const HeatedSeats = formData.get('heatedSeats');
-  if (typeof HeatedSeats !== 'string') throw new Error('Missing boolean');
+  // if (typeof HeatedSeats !== 'string') throw new Error('Missing boolean');
 
   const BackupCamera = formData.get('sunroofMoonroof');
-  if (typeof BackupCamera !== 'string') throw new Error('Missing boolean');
+  // if (typeof BackupCamera !== 'string') throw new Error('Missing boolean');
 
   const NavigationSystem = formData.get('navigationSystem');
-  if (typeof NavigationSystem !== 'string') throw new Error('Missing boolean');
+  // if (typeof NavigationSystem !== 'string') throw new Error('Missing boolean');
 
   const values = {
     brand,
     model,
     year: Number(year),
-    price: `${price}€`,
+    price,
     features: {
       SunroofMoonroof: Boolean(SunroofMoonroof),
       HeatedSeats: Boolean(HeatedSeats),

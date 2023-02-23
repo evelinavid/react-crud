@@ -8,23 +8,32 @@ import {
   Button,
 } from '@mui/material';
 import DirectionsCarFilledOutlinedIcon from '@mui/icons-material/DirectionsCarFilledOutlined';
+import { useNavigate } from 'react-router-dom';
+import routes from 'navigation/routes';
+import ApiService from 'services/api-service';
 import FeaturesField from './features-field';
 import ImageField from './image-field';
-
-
+import { getCarFormValues } from './helpers';
 
 const CarFormPage = () => {
   const formRef = React.useRef<undefined | HTMLFormElement>(undefined);
 
-  const handleSubmit = (event:React.FormEvent<HTMLFormElement>) => {
+  const navigate = useNavigate();
+
+  const handleSubmit = async (event:React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (formRef.current === null) return;
 
     try {
-      const values = getCarFormData(formRef.current);
-      console.log('vykdomas sukurimas');
-      console.log(values);
+      const values = getCarFormValues(formRef.current);
+      await ApiService.createCar(values);
+      navigate(routes.HomePage);
     } catch (error) {
-      alert('neteising duomenys');
+      if (error instanceof Error) {
+        alert(error.message);
+      } else {
+        alert('neteisingi duomenys');
+      }
     }
   };
 

@@ -1,14 +1,14 @@
 type CarModel = {
-  id: number,
+  id: string,
   brand: string,
   model: string,
   features: {
-    SunroofMoonroof: boolean,
-    HeatedSeats: boolean,
-    BackupCamera: boolean,
-    NavigationSystem: boolean
+    SunroofMoonroof?: boolean,
+    HeatedSeats?: boolean,
+    BackupCamera?: boolean,
+    NavigationSystem?: boolean
   },
   images: string[],
-  price: number,
+  price: string,
   year: number
 };
