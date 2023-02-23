@@ -43,7 +43,7 @@ const ImageField = () => {
           />
         ))}
       </Box>
-      <Stack>
+      <Stack sx={{ alignItems: 'center' }}>
         <IconButton onClick={addImgField}>
           <AddCircleOutlineIcon sx={{ fontSize: 28, color: 'secondary.main' }} />
         </IconButton>

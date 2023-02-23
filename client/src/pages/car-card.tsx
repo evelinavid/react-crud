@@ -1,7 +1,10 @@
 import Img from 'components/ui/img';
 import React from 'react';
-import { Box, Typography, Stack } from '@mui/material';
+import {
+  Box, Typography, Stack, Button,
+} from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import DeleteIcon from '@mui/icons-material/Delete';
 import {
   CarsCardStyle, H1Style, H4Style, H3Style, H2Style,
 } from './styles';
@@ -19,7 +22,21 @@ const CarCard: React.FC<CarCardProps> = ({
 }) => {
   const navigate = useNavigate();
   return (
-    <Stack spacing={2}>
+    <Stack spacing={2} sx={{ position: 'relative' }}>
+      <Button
+        variant="contained"
+        color="secondary"
+        size="small"
+        sx={{
+          position: 'absolute',
+          top: 30,
+          left: 10,
+          minWidht: 'initial',
+        }}
+        onClick={() => console.log('gaunama uzklausa')}
+      >
+        <DeleteIcon />
+      </Button>
       <Box sx={CarsCardStyle} onClick={() => navigate(routes.SingleCarPage.createLink(id))}>
         <Box sx={{ bgcolor: 'common.black' }}>
           <Img src={images[0]} alt="car-pic" sx={{ width: 1, height: '200px' }} />

@@ -1,15 +1,8 @@
 import React from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import {
-  Box, IconButton, Typography, Container,
+  Box, Typography, Container, Button,
 } from '@mui/material';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import Img from 'components/ui/img';
-import { Navigation } from 'swiper';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import Stack from '@mui/system/Stack';
-import { letterSpacing } from '@mui/system';
 import ApiService from '../../services/api-service';
 import routes from '../../navigation/routes';
 import 'swiper/css';
@@ -17,16 +10,16 @@ import 'swiper/css/navigation';
 import {
   H4Style,
   H2Style,
-  SingleCarPageStyle,
-  SingleCarPageImg,
-  SingleCarPageButtons,
-  SingleCarPageTextContainerStyle,
+
 } from '../styles';
-import Button from '@mui/material/Button';
+import {
+  SingleCarPageStyle,
+  SingleCarPageTextContainerStyle,
+  SingleCarPageButtons,
+} from './styles';
+import ImageSwiper from './swiper';
 
 const SingleCarPage: React.FC = () => {
-  const leftArrowRef = React.useRef<HTMLButtonElement | null>(null);
-  const rightArrowRef = React.useRef<HTMLButtonElement | null>(null);
   const { id } = useParams();
   const [car, setCar] = React.useState<undefined | CarModel>(undefined);
 
@@ -46,57 +39,7 @@ const SingleCarPage: React.FC = () => {
     <Container>
 
       <Box sx={SingleCarPageStyle}>
-        <Box sx={SingleCarPageImg}>
-          <Swiper
-            modules={[Navigation]}
-            navigation={{
-              enabled: true,
-              nextEl: rightArrowRef.current,
-              prevEl: leftArrowRef.current,
-            }}
-            style={{ height: '100%' }}
-          >
-            {car.images.map((img) => (
-              <SwiperSlide>
-                <Img src={img} sx={{ height: 1, width: 1 }} />
-              </SwiperSlide>
-            ))}
-            <Stack sx={{
-              position: 'absolute',
-              top: 0,
-              bottom: 0,
-              left: 0,
-              zIndex: 3000,
-              justifyContent: 'center',
-            }}
-            >
-              <IconButton ref={leftArrowRef}>
-                <ArrowBackIcon sx={{
-                  color: 'secondary.main',
-                  fontSize: 30,
-                }}
-                />
-              </IconButton>
-            </Stack>
-            <Stack sx={{
-              position: 'absolute',
-              top: 0,
-              bottom: 0,
-              right: 0,
-              zIndex: 3000,
-              justifyContent: 'center',
-            }}
-            >
-              <IconButton ref={rightArrowRef}>
-                <ArrowForwardIcon sx={{
-                  color: 'secondary.main',
-                  fontSize: 30,
-                }}
-                />
-              </IconButton>
-            </Stack>
-          </Swiper>
-        </Box>
+        <ImageSwiper images={car.images} />
         <Box sx={SingleCarPageTextContainerStyle}>
           <Typography
             sx={{

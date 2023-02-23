@@ -10,14 +10,13 @@ import {
 
 const FeaturesField = () => {
   const [features, setFeatures] = React.useState<string[]>([]);
-  console.log(features);
 
   const handleSkillChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const index = features.indexOf(event.target.value);
     if (index === -1) {
       setFeatures([...features, event.target.value]);
     } else {
-      setFeatures(features.filter((skill) => skill !== event.target.value));
+      setFeatures(features.filter((feature) => feature !== event.target.value));
     }
   };
   return (
