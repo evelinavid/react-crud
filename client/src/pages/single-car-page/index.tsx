@@ -3,7 +3,6 @@ import { Navigate, useParams } from 'react-router-dom';
 import {
   Box, Typography, Container, Button,
 } from '@mui/material';
-import ApiService from '../../services/api-service';
 import routes from '../../navigation/routes';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -18,22 +17,16 @@ import {
   SingleCarPageButtons,
 } from './styles';
 import ImageSwiper from './swiper';
+import useCar from '../../hooks/use-car';
 
 const SingleCarPage: React.FC = () => {
   const { id } = useParams();
-  const [car, setCar] = React.useState<undefined | CarModel>(undefined);
+  const [car, loadingCarData] = useCar(id);
 
-  React.useEffect(() => {
-    if (id !== undefined) {
-      (async () => {
-        const fetchedCar = await ApiService.fetchCar(id);
-
-        setCar(fetchedCar);
-      })();
-    }
-  }, []);
   if (id === undefined) return <Navigate to={routes.HomePage} />;
   if (car === undefined) return null;
+
+  if (loadingCarData) return null;
 
   return (
     <Container>

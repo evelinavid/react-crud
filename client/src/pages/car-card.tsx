@@ -5,6 +5,7 @@ import {
 } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
 import {
   CarsCardStyle, H1Style, H4Style, H3Style, H2Style,
 } from './styles';
@@ -23,20 +24,39 @@ const CarCard: React.FC<CarCardProps> = ({
   const navigate = useNavigate();
   return (
     <Stack spacing={2} sx={{ position: 'relative' }}>
-      <Button
-        variant="contained"
-        color="secondary"
-        size="small"
-        sx={{
-          position: 'absolute',
-          top: 30,
-          left: 10,
-          minWidht: 'initial',
-        }}
-        onClick={() => console.log('gaunama uzklausa')}
+      <Box sx={{
+        position: 'absolute',
+        top: 30,
+        left: 15,
+        display: 'flex',
+        gap: 0.5,
+      }}
       >
-        <DeleteIcon />
-      </Button>
+        <Button
+          variant="contained"
+          color="info"
+          size="small"
+          sx={{
+            minWidth: 'initial',
+            p: 0.5,
+          }}
+          onClick={() => console.log('gaunama uzklausa')}
+        >
+          <DeleteIcon />
+        </Button>
+        <Button
+          variant="contained"
+          color="warning"
+          size="small"
+          sx={{
+            minWidth: 'initial',
+            p: 0.5,
+          }}
+          onClick={() => navigate(routes.UpdateCarPage.createLink(id))}
+        >
+          <EditIcon />
+        </Button>
+      </Box>
       <Box sx={CarsCardStyle} onClick={() => navigate(routes.SingleCarPage.createLink(id))}>
         <Box sx={{ bgcolor: 'common.black' }}>
           <Img src={images[0]} alt="car-pic" sx={{ width: 1, height: '200px' }} />

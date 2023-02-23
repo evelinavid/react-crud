@@ -25,6 +25,10 @@ const router = createBrowserRouter([
         path: routes.CarFormPage,
         element: <CarFormPage />,
       },
+      {
+        path: routes.UpdateCarPage.path,
+        element: <CarFormPage />,
+      },
     ],
   },
 

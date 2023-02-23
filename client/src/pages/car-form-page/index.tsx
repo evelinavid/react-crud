@@ -8,17 +8,19 @@ import {
   Button,
 } from '@mui/material';
 import DirectionsCarFilledOutlinedIcon from '@mui/icons-material/DirectionsCarFilledOutlined';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import routes from 'navigation/routes';
 import ApiService from 'services/api-service';
 import FeaturesField from './features-field';
 import ImageField from './image-field';
 import { getCarFormValues } from './helpers';
+import useCar from '../../hooks/use-car';
 
 const CarFormPage = () => {
+  const { id } = useParams();
   const formRef = React.useRef<undefined | HTMLFormElement>(undefined);
-
   const navigate = useNavigate();
+  const [car, loadingCarData] = useCar(id);
 
   const handleSubmit = async (event:React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -36,6 +38,11 @@ const CarFormPage = () => {
       }
     }
   };
+
+  if (loadingCarData) return null;
+
+  console.log('atnaujinami duomenys');
+  console.log(car)
 
   return (
     <Stack sx={{
