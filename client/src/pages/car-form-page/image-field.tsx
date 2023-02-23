@@ -1,6 +1,7 @@
 import React from 'react';
 import DeleteIcon from '@mui/icons-material/Delete';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import createId from 'uniqid';
 import {
   Box,
   Stack,
@@ -9,28 +10,24 @@ import {
   IconButton,
 } from '@mui/material';
 
-let imgFieldCount = 0;
-const createId = () => {
-  imgFieldCount += 1;
-  return String(imgFieldCount);
-};
-
 const initialIds = [createId()];
 
 const ImageField = () => {
   const [imgFields, setImgFields] = React.useState<string[]>(initialIds);
   const addImgField = () => setImgFields([...imgFields, createId()]);
-  const removeImgField = (id:string) => setImgFields(
-    imgFields.filter((imgId) => imgId !== id),
-  );
-
+  const removeImgField = (id:string) => {
+    if (imgFields.length > 1) {
+      setImgFields(imgFields.filter((imgId) => imgId !== id));
+    }
+  };
   return (
     <Box>
-      <Box sx={{ width: 1 }}>
+      <Box sx={{ width: 1, paddingBottom: 1 }}>
         {imgFields.map((id) => (
           <TextField
             key={id}
             label="Image"
+            name='images'
             fullWidth
             variant="filled"
             size="small"

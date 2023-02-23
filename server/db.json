@@ -1,7 +1,7 @@
 {
     "cars": [
         {
-            "id": 1,
+            "id": "1",
             "brand": "TOYOTA",
             "model": "Corolla",
             "features": {
@@ -15,11 +15,11 @@
                 "https://scene7.toyota.eu/is/image/toyotaeurope/toyota-corolla-sedan-2019-gallery-full_tcm-10-1559726:Medium-Landscape?ts=1675688416321",
                 "https://scene7.toyota.eu/is/image/toyotaeurope/toyota-corolla-hatchback-2019-gallery-08-full_tcm-10-1553826:Medium-Landscape?ts=1675688416347"
             ],
-            "price": 32000,
+            "price": "32000",
             "year": 2019
         },
         {
-            "id": 2,
+            "id": "2",
             "brand": "LEXUS",
             "model": "UX",
             "features": {
@@ -33,11 +33,11 @@
                 "https://scene7.toyota.eu/is/image/toyotaeurope/4th-generation-lexus-1920x1080?qlt=80&wid=1280&fit=fit,1&ts=1675691419832",
                 "https://scene7.toyota.eu/is/image/toyotaeurope/lexus-safety-system-1920x1080-1?qlt=80&wid=1280&fit=fit,1&ts=1675691420015"
             ],
-            "price": 48000,
+            "price": "48000",
             "year": 2022
         },
         {
-            "id": 3,
+            "id": "3",
             "brand": "LEXUS",
             "model": "CT 200H",
             "features": {
@@ -51,11 +51,11 @@
                 "https://select.lexus.lt/picserver1/userdata/1/30039/WheTDhdoBr/xxl_kfz88110006_image00032.jpg",
                 "https://select.lexus.lt/picserver1/userdata/1/30039/WheTDhdoBr/xxl_kfz88110006_image00023.jpg"
             ],
-            "price": 17900,
+            "price": "17900",
             "year": 2014
         },
         {
-            "id": 4,
+            "id": "4",
             "brand": "TOYOTA",
             "model": "Verso-S",
             "features": {
@@ -69,11 +69,11 @@
                 "https://toyotaplus.toyota.lt/picserver1/userdata/1/30032/WheTwhdkDvVDtN/xxl_kfz87742251_3760_20221221_150032.jpg",
                 "https://toyotaplus.toyota.lt/picserver1/userdata/1/30032/WheTwhdkDvVDtN/xxl_kfz87742251_3761_20221221_145544.jpg"
             ],
-            "price": 8000,
+            "price": "8000",
             "year": 2011
         },
         {
-            "id": 5,
+            "id": "5",
             "brand": "TOYOTA",
             "model": "Land Cruiser",
             "features": {
@@ -87,11 +87,11 @@
                 "https://toyotaplus.toyota.lt/picserver1/userdata/1/30033/WheTxhdkDvVDtN/xxl_kfz88639418_59920_33808__mg_7643.jpg",
                 "https://toyotaplus.toyota.lt/picserver1/userdata/1/30033/WheTxhdkDvVDtN/xxl_kfz88639418_59917_33805__mg_7628.jpg"
             ],
-            "price": 36000,
+            "price": "36000",
             "year": 2017
         },
         {
-            "id": 6,
+            "id": "6",
             "brand": "PEUGEOT",
             "model": "308",
             "features": {
@@ -105,11 +105,11 @@
                 "https://media.peugeotlietuva.lt/image/85/8/peugeot-308phev-2103hm-016.782858.19.jpg?autocrop=1",
                 "https://media.peugeotlietuva.lt/image/85/9/peugeot-308phev-2103styp-032.782859.19.jpg?autocrop=1"
             ],
-            "price": 56000,
+            "price": "56000",
             "year": 2021
         },
         {
-            "id": 7,
+            "id": "7",
             "brand": "PEUGEOT",
             "model": "508",
             "features": {
@@ -123,11 +123,11 @@
                 "https://media.peugeotlietuva.lt/image/24/4/peugeot-508-2202styp-301.382244.17.jpg",
                 "https://media.peugeotlietuva.lt/image/24/5/peugeot-508-2202styp-302.382245.17.jpg"
             ],
-            "price": 38000,
+            "price": "38000",
             "year": 2022
         },
         {
-            "id": 8,
+            "id": "8",
             "brand": "MERCEDES-BENZ",
             "model": "A200",
             "features": {
@@ -141,11 +141,11 @@
                 "https://autoplius-img.dgn.lt/ann_2_266330286/mercedes-benz-a200-1-8-l-hecbekas-2013-dyzelinas-13.jpg",
                 "https://autoplius-img.dgn.lt/ann_3_266330260/mercedes-benz-a200-1-8-l-hecbekas-2013-dyzelinas-0.jpg"
             ],
-            "price": 15000,
+            "price": "15000",
             "year": 2013
         },
         {
-            "id": 9,
+            "id": "9",
             "brand": "VOLKSWAGEN",
             "model": "T-CROSS",
             "features": {
@@ -159,11 +159,11 @@
                 "https://autoplius-img.dgn.lt/ann_25_262859618/volkswagen-t-cross-1-0-l-visureigis-2021-benzinas-0.jpg",
                 "https://autoplius-img.dgn.lt/ann_25_262859618/volkswagen-t-cross-1-0-l-visureigis-2021-benzinas-0.jpg"
             ],
-            "price": 32000,
+            "price": "32000",
             "year": 2021
         },
         {
-            "id": 10,
+            "id": "10",
             "brand": "MERCEDES-BENZ",
             "model": "B220",
             "features": {
@@ -177,11 +177,11 @@
                 "https://autoplius-img.dgn.lt/ann_25_252741028/mercedes-benz-b220-2-0-l-vienaturis-2019-dyzelinas-0.jpg",
                 "https://autoplius-img.dgn.lt/ann_25_252741028/mercedes-benz-b220-2-0-l-vienaturis-2019-dyzelinas-0.jpg"
             ],
-            "price": 27000,
+            "price": "27000",
             "year": 2019
         },
         {
-            "id": 11,
+            "id": "11",
             "brand": "OPEL",
             "model": "MOKKA",
             "features": {
@@ -195,11 +195,11 @@
                 "https://autoplius-img.dgn.lt/ann_25_264319562/opel-mokka-1-7-l-visureigis-2015-dyzelinas-0.jpg",
                 "https://autoplius-img.dgn.lt/ann_2_264319572/opel-mokka-1-7-l-visureigis-2015-dyzelinas-8.jpg"
             ],
-            "price": 12000,
+            "price": "12000",
             "year": 2015
         },
         {
-            "id": 12,
+            "id": "12",
             "brand": "KIA",
             "model": "CEE'D",
             "features": {
@@ -213,7 +213,7 @@
                 "https://autoplius-img.dgn.lt/ann_25_261145782/kia-cee-d-1-4-l-hecbekas-2017-dyzelinas-0.jpg",
                 "https://autoplius-img.dgn.lt/ann_25_261145782/kia-cee-d-1-4-l-hecbekas-2017-dyzelinas-0.jpg"
             ],
-            "price": 12000,
+            "price": "12000",
             "year":2017
         }
     ]

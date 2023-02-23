@@ -27,8 +27,10 @@ const FeaturesField = () => {
           <FormLabel>Features</FormLabel>
           <FormGroup>
             <FormControlLabel
+              name="features"
               control={(
                 <Checkbox
+                  name="backupCamera"
                   value="backupCamera"
                   checked={features.includes('backupCamera')}
                   onChange={handleSkillChange}
@@ -39,6 +41,7 @@ const FeaturesField = () => {
             <FormControlLabel
               control={(
                 <Checkbox
+                  name="heatedSeats"
                   value="heatedSeats"
                   checked={features.includes('heatedSeats')}
                   onChange={handleSkillChange}
@@ -49,6 +52,7 @@ const FeaturesField = () => {
             <FormControlLabel
               control={(
                 <Checkbox
+                  name="sunroofMoonroof"
                   value="sunroofMoonroof"
                   checked={features.includes('sunroofMoonroof')}
                   onChange={handleSkillChange}
@@ -59,6 +63,7 @@ const FeaturesField = () => {
             <FormControlLabel
               control={(
                 <Checkbox
+                  name="navigationSystem"
                   value="navigationSystem"
                   checked={features.includes('navigationSystem')}
                   onChange={handleSkillChange}
