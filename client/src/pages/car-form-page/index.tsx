@@ -15,12 +15,20 @@ import FeaturesField from './features-field';
 import ImageField from './image-field';
 import { getCarFormValues } from './helpers';
 import useCar from '../../hooks/use-car';
+import { getModeData } from './data';
 
 const CarFormPage = () => {
   const { id } = useParams();
   const formRef = React.useRef<undefined | HTMLFormElement>(undefined);
   const navigate = useNavigate();
   const [car, loadingCarData] = useCar(id);
+  const mode = id !== undefined ? 'edit' : 'create';
+  const {
+    title,
+    btnText,
+    color,
+    colorMain,
+  } = getModeData(mode);
 
   const handleSubmit = async (event:React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -28,8 +36,13 @@ const CarFormPage = () => {
 
     try {
       const values = getCarFormValues(formRef.current);
-      await ApiService.createCar(values);
-      navigate(routes.HomePage);
+      if (mode === 'create') {
+        await ApiService.createCar(values);
+        navigate(routes.HomePage);
+      } else if (id !== undefined) {
+        await ApiService.updateCar(id, values);
+        navigate(-1);
+      }
     } catch (error) {
       if (error instanceof Error) {
         alert(error.message);
@@ -40,9 +53,6 @@ const CarFormPage = () => {
   };
 
   if (loadingCarData) return null;
-
-  console.log('atnaujinami duomenys');
-  console.log(car)
 
   return (
     <Stack sx={{
@@ -65,15 +75,17 @@ const CarFormPage = () => {
           ref={formRef}
         >
           <Box sx={{ textAlign: 'center' }}>
-            <DirectionsCarFilledOutlinedIcon sx={{ fontSize: 60, color: 'secondary.main' }} />
+            <DirectionsCarFilledOutlinedIcon color={color} sx={{ fontSize: 60 }} />
           </Box>
-          <Typography variant="h5" color="secondary" sx={{ textAlign: 'center' }}>Pridėkite naują automibilį</Typography>
+          <Typography variant="h5" color={colorMain} sx={{ textAlign: 'center' }}>{title}</Typography>
           <TextField
             name="brand"
             label="Brand"
             fullWidth
             variant="filled"
             size="small"
+            color={color}
+            defaultValue={car?.brand}
           />
           <Box sx={{ display: 'flex', width: 1, gap: 2 }}>
             <TextField
@@ -82,6 +94,9 @@ const CarFormPage = () => {
               fullWidth
               variant="filled"
               size="small"
+              color={color}
+              defaultValue={car?.model}
+
             />
             {' '}
             <TextField
@@ -90,10 +105,19 @@ const CarFormPage = () => {
               fullWidth
               variant="filled"
               size="small"
+              color={color}
+              defaultValue={car?.year}
+
             />
           </Box>
-          <FeaturesField />
-          <ImageField />
+          <FeaturesField
+            color={color}
+            defaultBackupCamera={car?.features.BackupCamera}
+            defaultHeatedSeats={car?.features.HeatedSeats}
+            defaulSunroofMoonroof={car?.features.SunroofMoonroof}
+            defaulNavigationSystem={car?.features.NavigationSystem}
+          />
+          <ImageField color={color} colorMain={colorMain} defaultImages={car?.images} />
 
           <TextField
             label="Price"
@@ -103,14 +127,17 @@ const CarFormPage = () => {
             fullWidth
             variant="filled"
             size="small"
+            color={color}
+            defaultValue={car?.price}
+
           />
           <Button
             variant="contained"
-            color="secondary"
+            color={color}
             size="large"
             type="submit"
           >
-            Create
+            {btnText}
 
           </Button>
         </Stack>

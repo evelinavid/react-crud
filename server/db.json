@@ -1,50 +1,14 @@
 {
   "cars": [
     {
-      "id": "1",
-      "brand": "TOYOTA",
-      "model": "Corolla",
-      "features": {
-        "SunroofMoonroof": false,
-        "HeatedSeats": true,
-        "BackupCamera": true,
-        "NavigationSystem": true
-      },
-      "images": [
-        "https://scene7.toyota.eu/is/image/toyotaeurope/toyota-corolla-sedan-2019-visual-02_tcm-10-1559763?qlt=80&wid=1280&fit=fit,1&ts=1675688416330",
-        "https://scene7.toyota.eu/is/image/toyotaeurope/toyota-corolla-sedan-2019-gallery-full_tcm-10-1559726:Medium-Landscape?ts=1675688416321",
-        "https://scene7.toyota.eu/is/image/toyotaeurope/toyota-corolla-hatchback-2019-gallery-08-full_tcm-10-1553826:Medium-Landscape?ts=1675688416347"
-      ],
-      "price": "32000",
-      "year": 2019
-    },
-    {
-      "id": "2",
-      "brand": "LEXUS",
-      "model": "UX",
-      "features": {
-        "SunroofMoonroof": true,
-        "HeatedSeats": false,
-        "BackupCamera": true,
-        "NavigationSystem": false
-      },
-      "images": [
-        "https://scene7.toyota.eu/is/image/toyotaeurope/Gallery-Exterior-8-1920x1080?qlt=80&wid=1280&fit=fit,1&ts=0",
-        "https://scene7.toyota.eu/is/image/toyotaeurope/4th-generation-lexus-1920x1080?qlt=80&wid=1280&fit=fit,1&ts=1675691419832",
-        "https://scene7.toyota.eu/is/image/toyotaeurope/lexus-safety-system-1920x1080-1?qlt=80&wid=1280&fit=fit,1&ts=1675691420015"
-      ],
-      "price": "48000",
-      "year": 2022
-    },
-    {
       "id": "3",
       "brand": "LEXUS",
       "model": "CT 200H",
       "features": {
-        "SunroofMoonroof": false,
+        "SunroofMoonroof": true,
         "HeatedSeats": true,
         "BackupCamera": false,
-        "NavigationSystem": false
+        "NavigationSystem": true
       },
       "images": [
         "https://select.lexus.lt/picserver1/userdata/1/30039/WheTDhdoBr/xxl_kfz88110006_image00002jpg-su-logo.jpg",
@@ -59,10 +23,10 @@
       "brand": "TOYOTA",
       "model": "Verso-S",
       "features": {
-        "SunroofMoonroof": false,
+        "SunroofMoonroof": true,
         "HeatedSeats": true,
         "BackupCamera": false,
-        "NavigationSystem": false
+        "NavigationSystem": true
       },
       "images": [
         "https://toyotaplus.toyota.lt/picserver1/userdata/1/30032/WheTwhdkDvVDtN/xxl_kfz87742251_3768_20221221_145644.jpg",
@@ -78,7 +42,7 @@
       "model": "Land Cruiser",
       "features": {
         "SunroofMoonroof": true,
-        "HeatedSeats": true,
+        "HeatedSeats": false,
         "BackupCamera": true,
         "NavigationSystem": true
       },
@@ -216,6 +180,5 @@
       "price": "12000",
       "year": 2017
     }
-
   ]
 }

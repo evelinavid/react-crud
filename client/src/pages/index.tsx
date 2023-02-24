@@ -10,10 +10,19 @@ const HomePage = () => {
   const [cars, setCars] = React.useState<CarModel[]>([]);
   const navigate = useNavigate();
 
+  const fetchingCars = async () => {
+    const fetchedCars = await ApiService.fetchCars();
+    setCars(fetchedCars);
+  };
+
+  const handleDelete = async (id: number | string) => {
+    await ApiService.deleteCar(id);
+    fetchingCars();
+  };
+
   React.useEffect(() => {
     (async () => {
-      const fetchedCars = await ApiService.fetchCars();
-      setCars(fetchedCars);
+      fetchingCars();
     })();
   }, []);
 
@@ -28,7 +37,7 @@ const HomePage = () => {
 
       </Button>
       <Box sx={CarsGridStyles}>
-        {cars.map((car) => (<CarCard key={car.id} {...car} />))}
+        {cars.map((car) => (<CarCard key={car.id} onDelete={handleDelete} {...car} />))}
       </Box>
     </Container>
   );

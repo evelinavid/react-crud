@@ -1,7 +1,6 @@
 import { Theme } from '@mui/material';
 
 export const SingleCarPageStyle = (theme: Theme) => ({
-  border: 'dashed 1px',
   margin: 'auto',
   [theme.breakpoints.up('sm')]: {
     display: 'block',

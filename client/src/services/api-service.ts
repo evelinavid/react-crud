@@ -23,10 +23,22 @@ const createCar = async (carData: Omit<CarModel, 'id'>) => {
   return response.data;
 };
 
+const deleteCar = async (id:string | number) => {
+  const response = await api.delete(`/cars/${id}`);
+  return response.data;
+};
+
+const updateCar = async (id: string | number, carData: Omit<CarModel, 'id'>) => {
+  const response = await api.patch(`/cars/${id}`, carData);
+  return response.data;
+};
+
 const ApiService = {
   fetchCars,
   fetchCar,
   createCar,
+  updateCar,
+  deleteCar,
 };
 
 export default ApiService;

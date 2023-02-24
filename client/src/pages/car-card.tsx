@@ -7,11 +7,13 @@ import { useNavigate } from 'react-router-dom';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import {
-  CarsCardStyle, H1Style, H4Style, H3Style, H2Style,
+  CarsCardStyle, H1Style, H2Style,
 } from './styles';
 import routes from '../navigation/routes';
 
-type CarCardProps = CarModel;
+type CarCardProps = CarModel & {
+  onDelete: (id: string | number) => void;
+};
 
 const CarCard: React.FC<CarCardProps> = ({
   id,
@@ -20,6 +22,7 @@ const CarCard: React.FC<CarCardProps> = ({
   images,
   price,
   year,
+  onDelete,
 }) => {
   const navigate = useNavigate();
   return (
@@ -40,7 +43,7 @@ const CarCard: React.FC<CarCardProps> = ({
             minWidth: 'initial',
             p: 0.5,
           }}
-          onClick={() => console.log('gaunama uzklausa')}
+          onClick={() => onDelete(id)}
         >
           <DeleteIcon />
         </Button>

@@ -6,12 +6,37 @@ import {
   FormLabel,
   FormGroup,
   Checkbox,
+  CheckboxProps,
 } from '@mui/material';
 
-const FeaturesField = () => {
-  const [features, setFeatures] = React.useState<string[]>([]);
+type FeaturesFieldProps = {
+  color: CheckboxProps['color'],
+  defaultBackupCamera?: boolean,
+  defaultHeatedSeats?: boolean,
+  defaulSunroofMoonroof?: boolean,
+  defaulNavigationSystem?: boolean,
+};
 
-  const handleSkillChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+const FeaturesField:React.FC<FeaturesFieldProps> = ({
+  color,
+  defaultBackupCamera,
+  defaultHeatedSeats,
+  defaulSunroofMoonroof,
+  defaulNavigationSystem,
+}) => {
+  const initialFeatures = React.useMemo(() => {
+    const value:string[] = [];
+    if (defaultBackupCamera) value.push('backupCamera');
+    if (defaultHeatedSeats) value.push('heatedSeats');
+    if (defaulSunroofMoonroof) value.push('sunroofMoonroof');
+    if (defaulNavigationSystem) value.push('navigationSystem');
+
+    return value;
+  }, []);
+
+  const [features, setFeatures] = React.useState<string[]>(initialFeatures);
+
+  const handleFeatureChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const index = features.indexOf(event.target.value);
     if (index === -1) {
       setFeatures([...features, event.target.value]);
@@ -29,10 +54,11 @@ const FeaturesField = () => {
               name="features"
               control={(
                 <Checkbox
+                  color={color}
                   name="backupCamera"
                   value="backupCamera"
                   checked={features.includes('backupCamera')}
-                  onChange={handleSkillChange}
+                  onChange={handleFeatureChange}
                 />
       )}
               label="Backup camera"
@@ -40,10 +66,11 @@ const FeaturesField = () => {
             <FormControlLabel
               control={(
                 <Checkbox
+                  color={color}
                   name="heatedSeats"
                   value="heatedSeats"
                   checked={features.includes('heatedSeats')}
-                  onChange={handleSkillChange}
+                  onChange={handleFeatureChange}
                 />
       )}
               label="Heated seats"
@@ -51,10 +78,11 @@ const FeaturesField = () => {
             <FormControlLabel
               control={(
                 <Checkbox
+                  color={color}
                   name="sunroofMoonroof"
                   value="sunroofMoonroof"
                   checked={features.includes('sunroofMoonroof')}
-                  onChange={handleSkillChange}
+                  onChange={handleFeatureChange}
                 />
       )}
               label="Sunroof/Moonroof"
@@ -62,10 +90,11 @@ const FeaturesField = () => {
             <FormControlLabel
               control={(
                 <Checkbox
+                  color={color}
                   name="navigationSystem"
                   value="navigationSystem"
                   checked={features.includes('navigationSystem')}
-                  onChange={handleSkillChange}
+                  onChange={handleFeatureChange}
                 />
       )}
               label="Navigation system"

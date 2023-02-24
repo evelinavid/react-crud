@@ -1,8 +1,9 @@
 import React from 'react';
-import { Navigate, useParams } from 'react-router-dom';
+import { Navigate, useParams, useNavigate } from 'react-router-dom';
 import {
   Box, Typography, Container, Button,
 } from '@mui/material';
+import EditIcon from '@mui/icons-material/Edit';
 import routes from '../../navigation/routes';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -22,6 +23,7 @@ import useCar from '../../hooks/use-car';
 const SingleCarPage: React.FC = () => {
   const { id } = useParams();
   const [car, loadingCarData] = useCar(id);
+  const navigate = useNavigate();
 
   if (id === undefined) return <Navigate to={routes.HomePage} />;
   if (car === undefined) return null;
@@ -99,7 +101,13 @@ const SingleCarPage: React.FC = () => {
           </Typography>
           <Box sx={SingleCarPageButtons}>
             <Button sx={{ flexGrow: 1 }} variant="contained" color="secondary">Contact</Button>
-            <Button variant="outlined" color="secondary"> Add to favourites</Button>
+            <Button
+              variant="outlined"
+              color="secondary"
+              onClick={() => navigate(routes.UpdateCarPage.createLink(id))}
+            >
+              <EditIcon />
+            </Button>
 
           </Box>
         </Box>
