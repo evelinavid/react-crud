@@ -27,7 +27,7 @@ const ImageSwiper: React.FC<ImageSwiperProps> = ({ images }) => {
       >
         {images.map((img) => (
           <SwiperSlide>
-            <Img src={img} sx={{ height: 1, width: 1 }} />
+            <Img src={img} key={img} sx={{ height: 1, width: 1 }} />
           </SwiperSlide>
         ))}
         <Stack sx={{

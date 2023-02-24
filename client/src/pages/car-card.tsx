@@ -67,13 +67,13 @@ const CarCard: React.FC<CarCardProps> = ({
         <Box sx={{ display: 'flex', flexDirection: 'column' }}>
 
           <Box sx={{ margin: 0, marginLeft: '0.5rem' }}>
-            <H1Style>
+            <Typography sx={H1Style}>
               {brand}
               {' '}
               {model}
               {' '}
               {year}
-            </H1Style>
+            </Typography>
             <Typography sx={{
               textAlign: 'center',
               paddingBottom: 2,
@@ -83,7 +83,7 @@ const CarCard: React.FC<CarCardProps> = ({
 
             </Typography>
             <Box sx={{
-              display: 'flex', width: 1, height: 45, alignItems: 'flex-end', justifyContent: 'center',
+              display: 'flex', width: 1, height: 40, alignItems: 'flex-end', justifyContent: 'center',
             }}
             >
               <Typography sx={H2Style} component="h2">

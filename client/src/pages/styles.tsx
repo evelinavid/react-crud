@@ -21,7 +21,7 @@ export const CarsGridStyles = (theme: Theme) => ({
 export const CarsCardStyle = (theme: Theme) => ({
   boxSizing: 'border-box',
   width: 1,
-  height: '375px',
+  height: '395px',
   borderRadius: '1rem',
   border: 'solid 10px #ccc',
   background: theme.palette.common.white,
@@ -30,20 +30,25 @@ export const CarsCardStyle = (theme: Theme) => ({
   },
 });
 
-export const H1Style = styled('h2')(({ theme }) => ({
+export const H1Style = (theme:Theme) => ({
   boxSizing: 'border-box',
-  fontSize: 24,
-  padding: '5px 0',
+  fontSize: 20,
+  padding: '2px 0',
   margin: 0,
   textAlign: 'center',
-}));
+  [theme.breakpoints.up('md')]: {
+    fontSize: 22,
+  },
+});
 
-export const H2Style = () => ({
+export const H2Style = (theme: Theme) => ({
   boxSizing: 'border-box',
   fontWeight: 600,
-  paddingRight: '8px',
+  fontSize: 18,
   textDecoration: 'underline',
-  fontSize: 22,
+  [theme.breakpoints.up('md')]: {
+    fontSize: 20,
+  },
 });
 
 export const H3Style = () => ({
